@@ -1,34 +1,16 @@
 from urllib.request import urlopen
 from urllib.error import URLError, HTTPError
 
-module = 2
-lessons = [
-    1,
-    2,
-    3,
-    4,
-    6,
-    7,
-    8,
-    10,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    20,
-    22,
-    23,
-    25,
-    26,
-    27,
-    28,
-    29,
-]
+lessons = []
 
-for lesson in lessons:
+for mod in [3, 4]:
+    for lesson_num in range(1, 30):
+        lessons.append(tuple((mod, lesson_num)))
+
+for tup in lessons:
+    module = tup[0]
+    lesson = tup[1]
+
     filename = "G01M{0:0=2d}L{1:0=2d}_MC_StudentNotes_4thEd.pdf".format(
         module, lesson
     )

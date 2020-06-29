@@ -6,7 +6,5 @@ RUN mkdir $SRC_DIR
 WORKDIR $SRC_DIR
 VOLUME $SRC_DIR
 
-# ADD . $SRC_DIR
-
 CMD ["/bin/bash"]
 
